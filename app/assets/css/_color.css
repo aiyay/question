@@ -1,0 +1,17 @@
+@import "nes.css/css/nes.css";
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+@font-face {
+  font-family:'Pix Font';
+  src: url("../fonts/DottedSongtiSquareRegular.otf");
+}
+@font-face {
+  font-family:'Press Start 2P';
+  font-weight: bold;
+  font-size:24px;
+  src: url("../fonts/PressStart2P-Regular.ttf");
+}
+*{
+  font-family: "Press Start 2P","Pix Font";
+}
