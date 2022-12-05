@@ -11,7 +11,7 @@ module.exports = {
   ],
   overrides: [
     {
-      files: ['layouts/*', 'pages/*'],
+      files: ['components/**', 'layouts/**', 'pages/**'],
       rules: {
         'vue/multi-word-component-names': 'off',
       },
@@ -25,4 +25,4 @@ module.exports = {
   rules: {
     'prettier/prettier': 2, // 0 代表 off 关闭, 1 代表 warning, 2 代表 error。
   },
-}
+};

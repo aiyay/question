@@ -8,7 +8,7 @@
           class="absolute bottom-1 left-6 flex flex-row items-center space-x-2 text-mini text-white"
         >
           <i class="snes-logo scale-75"></i>
-          <div>sony</div>
+          <div>新青年</div>
         </div>
         <div class="nes-btn is-error absolute bottom-1 right-16 p-0">|</div>
       </div>
