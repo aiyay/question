@@ -23,6 +23,7 @@ module.exports = {
   },
   plugins: ['vue', 'prettier'],
   rules: {
+    'no-undef': 'off',
     'prettier/prettier': 2, // 0 代表 off 关闭, 1 代表 warning, 2 代表 error。
   },
 };
