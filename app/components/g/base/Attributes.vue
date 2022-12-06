@@ -1,34 +1,56 @@
 <template>
   <section>
-    <div class="grid grid-cols-3 gap-4">
-      <div>1</div>
-      <div>2</div>
-      <div>3</div>
-      <div>4</div>
+    <div class="border-2 border-indigo-600">
+      <div class="sd">金:{{ attributes.attrMetal }}</div>
+      <div class="sd">木:{{ attributes.attrWood }}</div>
+      <div class="sd">水:{{ attributes.attrWater }}</div>
+      <div class="sd">火:{{ attributes.attrFire }}</div>
+      <div class="sd">土:{{ attributes.attrEarth }}</div>
     </div>
   </section>
 </template>
 <script lang="ts">
-import { defineComponent, onMounted, ref } from 'vue';
-
-export default defineComponent({
-  setup() {
-    const attrMetal = ref('login');
-    const attrWood = ref('11');
-    const attrWater = ref('11');
-    const attrFire = ref('login');
-    const attrEarth = ref('11');
-    onMounted(() => {
-      console.log(gAttributes);
+export default {
+  props: {
+    attrMetal: {
+      type: Number,
+      default: 0,
+    },
+    attrWood: {
+      type: Number,
+      default: 0,
+    },
+    attrWater: {
+      type: Number,
+      default: 0,
+    },
+    attrFire: {
+      type: Number,
+      default: 0,
+    },
+    attrEarth: {
+      type: Number,
+      default: 0,
+    },
+  },
+  setup(props) {
+    const { attrMetal, attrWood, attrWater, attrFire, attrEarth } =
+      toRefs(props);
+    const attributes = gAttributes({
+      attrMetal: attrMetal.value,
+      attrWood: attrWood.value,
+      attrWater: attrWater.value,
+      attrFire: attrFire.value,
+      attrEarth: attrEarth.value,
     });
+    // 使用父组件传递过来的值
 
+    // onMounted(() => {
+    // person.setName(name.value);
+    // });
     return {
-      attrMetal,
-      attrWood,
-      attrWater,
-      attrFire,
-      attrEarth,
+      attributes,
     };
   },
-});
+};
 </script>

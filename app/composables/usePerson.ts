@@ -26,43 +26,49 @@ export const Face = () => ({
   水有寒凉、滋润之性。
 */
 interface AttributesIF {
-  attr_metal: number, // 金
-  attr_wood: number, // 木
-  attr_water: number, // 水
-  attr_fire: number, // 火
-  attr_earth: number, // 土
+  attrMetal: number, // 金
+  attrWood: number, // 木
+  attrWater: number, // 水
+  attrFire: number, // 火
+  attrEarth: number, // 土
 }
 
 class Attributes implements AttributesIF {
-  attr_metal: number;
-  attr_wood: number;
-  attr_water: number;
-  attr_fire: number;
-  attr_earth: number;
+  attrMetal: number;
+  attrWood: number;
+  attrWater: number;
+  attrFire: number;
+  attrEarth: number;
   constructor({
-    attr_metal,
-    attr_wood,
-    attr_water,
-    attr_fire,
-    attr_earth
+    attrMetal,
+    attrWood,
+    attrWater,
+    attrFire,
+    attrEarth
   }:AttributesIF) {
-    this.attr_metal = attr_metal;
-    this.attr_wood = attr_wood;
-    this.attr_water = attr_water;
-    this.attr_fire = attr_fire;
-    this.attr_earth = attr_earth;
+    this.attrMetal = attrMetal;
+    this.attrWood = attrWood;
+    this.attrWater = attrWater;
+    this.attrFire = attrFire;
+    this.attrEarth = attrEarth;
   }
   setData(){
 
   }
 }
 
-export const gAttributes = new Attributes({
-  attr_metal: 0,
-  attr_wood: 0,
-  attr_water: 0,
-  attr_fire: 0,
-  attr_earth: 0,
+export const gAttributes = ({
+  attrMetal,
+  attrWood,
+  attrWater,
+  attrFire,
+  attrEarth,
+}: AttributesIF) => new Attributes({
+  attrMetal,
+  attrWood,
+  attrWater,
+  attrFire,
+  attrEarth,
 })
 
 interface SkillIF {
@@ -99,13 +105,20 @@ class Skill implements SkillIF {
   }
 }
 
-export const gSkill = new Skill({
-  knife: 0,
-  pike: 0,
-  sword: 0,
-  bow: 0,
-  fist: 0,
-  leg: 0,
+export const gSkill = ({
+  knife,
+  sword,
+  pike,
+  bow,
+  fist,
+  leg,
+}:SkillIF) => new Skill({
+  knife,
+  sword,
+  pike,
+  bow,
+  fist,
+  leg,
 })
 
 interface PersonIF {
@@ -125,8 +138,8 @@ interface PersonIF {
   sp: number; // 精神力
   perseverance: number;// 毅力
 
-  attr_yin: number; // 阴
-  attr_yang: number; // 阳
+  yin: number; // 阴
+  yang: number; // 阳
 }
 
 class Person implements PersonIF {
@@ -142,8 +155,8 @@ class Person implements PersonIF {
   understanding: number;
   sp: number;
   perseverance: number;
-  attr_yin: number;
-  attr_yang: number;
+  yin: number;
+  yang: number;
   constructor({
     name,
     age,
@@ -157,8 +170,8 @@ class Person implements PersonIF {
     understanding,
     sp,
     perseverance,
-    attr_yin,
-    attr_yang,
+    yin,
+    yang,
   }:PersonIF) {
     this.name = name;
     this.age = age;
@@ -172,11 +185,8 @@ class Person implements PersonIF {
     this.understanding = understanding;
     this.sp = sp;
     this.perseverance = perseverance;
-    this.attr_yin = attr_yin;
-    this.attr_yang = attr_yang;
-  }
-  setName(name: string) {
-    this.name = name
+    this.yin = yin;
+    this.yang = yang;
   }
   setData() {
 
@@ -186,19 +196,36 @@ class Person implements PersonIF {
   }
 }
 
-export const gPerson = new Person({
-  name: '0',
-  age: 0,
-  charm: 0,
-  power: 0,
-  hp: 0,
-  attack: 0,
-  defense: 0,
-  eg: 0,
-  agile: 0,
-  understanding: 0,
-  sp: 0,
-  perseverance: 0,
-  attr_yin: 0,
-  attr_yang: 0
-})
+export const gPerson = ({
+  name,
+  age,
+  charm,
+  power,
+  hp,
+  attack,
+  defense,
+  eg,
+  agile,
+  understanding,
+  sp,
+  perseverance,
+  yin,
+  yang
+}:PersonIF) => {
+  return new Person({
+    name,
+    age,
+    charm,
+    power,
+    hp,
+    attack,
+    defense,
+    eg,
+    agile,
+    understanding,
+    sp,
+    perseverance,
+    yin,
+    yang
+  })
+} 

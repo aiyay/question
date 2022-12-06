@@ -1,12 +1,12 @@
 <template>
   <section>
-    <GBasePerson />
-    <GBasePerson :name="type" />
-    <GBaseAttributes />
-    <GBaseSkill />
-    <div class="">{{ type }}</div>
-    <div>{{ ad }}</div>
-    <div>{{ bs }}</div>
+    <div class="grid grid-cols-2 gap-4">
+      <GBasePerson class="row-span-2" />
+      <div class="grid gap-2">
+        <GBaseAttributes />
+        <GBaseSkill />
+      </div>
+    </div>
   </section>
 </template>
 <script lang="ts">
